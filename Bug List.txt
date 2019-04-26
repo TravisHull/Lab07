@@ -1,0 +1,8 @@
+isEmpty() always returns true.
+addBack() adds to front of Linked List instead of back.
+removeBack() does not remove element from Linked List.
+removeFront() does not remove element from Linked List.
+
+I believe that isEmpty() is responsible for breaking both removeBack() and removeFront(), since both would need to call isEmpty() to avoid throwing an exception by trying to remove an element from an empty list.  Since isEmpty() always returns true, removeBack() and removeFront() simply return false instead of removing elements from the list.
+
+It is also possible that isEmpty() is responsible for breaking addBack() as well, if addBack() has been implemented to call addFront() on an empty list.  This is impossible to check without access to the source code.
